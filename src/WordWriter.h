@@ -1,21 +1,21 @@
 #pragma once
-#include "Output.h"
-#include "WordGenerator.h"
+#include "OutputInterface.h"
+#include "WordGeneratorInterface.h"
 #include <string>
 
 namespace justi {
 
 class WordWriter {
   public:
-    WordWriter(WordGenerator& wordGenerator, Output& output)
+    WordWriter(WordGeneratorInterface& wordGenerator, OutputInterface& output)
         : wordGenerator_(wordGenerator)
         , output_(output) {}
 
     void printRandomWordsToUpper(std::size_t numWords);
 
   private:
-    WordGenerator& wordGenerator_;
-    Output& output_;
+    WordGeneratorInterface& wordGenerator_;
+    OutputInterface& output_;
 };
 
 } // namespace justi

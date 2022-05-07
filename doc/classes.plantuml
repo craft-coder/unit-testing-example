@@ -6,12 +6,19 @@ component Executable {
 
 component WordWriterLib {
     class WordWriter
+
+    abstract class WordGeneratorInterface
     class WordGenerator 
+
+    abstract class OutputInterface
     class Output 
     class iostream
 
-    WordWriter o-- Output
-    WordWriter o-- WordGenerator
+    WordWriter o-- OutputInterface
+    WordWriter o-- WordGeneratorInterface
+
+    OutputInterface <|-- Output
+    WordGeneratorInterface <|-- WordGenerator
     Output <-- iostream
 }
 

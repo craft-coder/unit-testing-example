@@ -1,5 +1,6 @@
 #include "WordGenerator.h"
 #include "WordWriter.h"
+#include "Output.h"
 
 using namespace justi;
 

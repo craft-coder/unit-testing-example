@@ -1,9 +1,9 @@
 #pragma once
-#include <string>
+#include "OutputInterface.h"
 
 namespace justi {
-class Output {
+class Output : public OutputInterface {
   public:
-    void write(const std::string&);
+    void write(const std::string&) override;
 };
 } // namespace justi

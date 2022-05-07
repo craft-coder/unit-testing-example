@@ -1,14 +1,13 @@
 #pragma once
-#include <string>
-#include <vector>
+#include "WordGeneratorInterface.h"
 
 namespace justi {
-class WordGenerator {
+class WordGenerator : public WordGeneratorInterface {
   public:
-    using Words = std::vector<std::string>;
-
     WordGenerator();
-    Words generate(std::size_t numWords) const;
+    Words generate(std::size_t numWords) const override;
+
+    void shuffleWords() {};
 
   private:
     Words wordDataBase_;
