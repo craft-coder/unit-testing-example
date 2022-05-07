@@ -1,4 +1,4 @@
-#include "Output.h"
+#include "ConsoleOutput.h"
 #include "WordGenerator.h"
 #include "WordWriter.h"
 
@@ -6,7 +6,7 @@ using namespace justi;
 
 int main() {
     WordGenerator wordGenerator;
-    Output output;
+    ConsoleOutput output;
     WordWriter wordWriter{wordGenerator, output};
 
     // We would like to test, if wordWriter properly transforms words to upper case

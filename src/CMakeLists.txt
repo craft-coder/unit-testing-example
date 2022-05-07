@@ -1,5 +1,5 @@
 add_library(WordWriterLib STATIC WordWriter.cpp
-                                 Output.cpp
+                                 ConsoleOutput.cpp
                                  WordGenerator.cpp)
 target_include_directories(WordWriterLib PUBLIC ${CMAKE_CURRENT_LIST_DIR})
 

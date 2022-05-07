@@ -2,7 +2,7 @@
 #include "OutputInterface.h"
 
 namespace justi {
-class Output : public OutputInterface {
+class ConsoleOutput : public OutputInterface {
   public:
     void write(const std::string&) override;
 };

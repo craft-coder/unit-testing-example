@@ -1,13 +1,13 @@
 #include "WordGenerator.h"
 #include "WordWriter.h"
-#include "Output.h"
+#include "ConsoleOutput.h"
 
 using namespace justi;
 
 int main(int argc, char** argv) {
 
     WordGenerator wordGenerator;
-    Output output;
+    ConsoleOutput output;
     WordWriter wordWriter{wordGenerator, output};
 
     auto numWords = 5;

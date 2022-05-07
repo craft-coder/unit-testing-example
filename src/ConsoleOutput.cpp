@@ -1,8 +1,8 @@
-#include "Output.h"
+#include "ConsoleOutput.h"
 #include <iostream>
 
 using namespace justi;
 
-void Output::write(const std::string& input) {
+void ConsoleOutput::write(const std::string& input) {
     std::cout << input << std::endl;
 }
