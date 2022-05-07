@@ -1,11 +1,11 @@
 allow_mixing
 
 component Executable {
-    file WordWriter
+    file main
 }
 
 component WordWriterLib {
-    class WordWriterLib
+    class WordWriter
 }
 
-WordWriter <-- WordWriterLib
+Executable <-- WordWriterLib

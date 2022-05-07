@@ -1,4 +1,4 @@
-add_library(WordWriterLib STATIC WordWriterLib.cpp)
+add_library(WordWriterLib STATIC WordWriter.cpp)
 target_include_directories(WordWriterLib PUBLIC ${CMAKE_CURRENT_LIST_DIR})
 
 add_executable(WordWriter main.cpp)
