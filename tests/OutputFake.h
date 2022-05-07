@@ -1,12 +1,9 @@
 #include "OutputInterface.h"
-#include <string>
-#include <vector>
+#include "gmock/gmock.h"
 
 namespace justi {
 class OutputFake : public OutputInterface {
   public:
-    void write(const std::string& input) override { writtenStuff.push_back(input); }
-
-    std::vector<std::string> writtenStuff;
+    MOCK_METHOD(void, write, (const std::string&), (override));
 };
 } // namespace justi

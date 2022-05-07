@@ -4,27 +4,21 @@
 #include <iostream>
 
 using namespace justi;
+using namespace testing;
 using Words = WordGeneratorInterface::Words;
 
-int main() {
+TEST(WordWriter, Example1) {
     //Setup
     WordGeneratorFake wordGenerator;
-    wordGenerator.wordDataBase_ = Words{"abc"};
+    EXPECT_CALL(wordGenerator, generate(_)).WillRepeatedly(Return(Words{"abc", "def"}));
+
+    // Expectations
     OutputFake output;
+    EXPECT_CALL(output, write("ABC")).Times(1);
+    EXPECT_CALL(output, write("DEF")).Times(1);
 
     WordWriter wordWriter{wordGenerator, output};
 
     // Action
     wordWriter.printRandomWordsToUpper(1);
-
-    // Assertion
-    auto expectedOutput = "ABC";
-    auto resultingOutput = output.writtenStuff[0];
-
-    if (expectedOutput == resultingOutput) {
-        std::cout << "Test successfull" << std::endl;
-    } else {
-        std::cout << "Test failed" << std::endl;
-    }
-
 }
