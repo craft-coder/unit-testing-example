@@ -5,7 +5,16 @@ component Executable {
 }
 
 component WordWriterLib {
-    class WordWriter
+    class WordWriter {
+        void printToUpper()
+    }
+    class Output {
+        void write()
+    }
+    class iostream
+
+    WordWriter *-- Output
+    Output <-- iostream
 }
 
 Executable <-- WordWriterLib

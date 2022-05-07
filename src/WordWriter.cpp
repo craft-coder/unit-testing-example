@@ -5,8 +5,7 @@
 namespace justi {
 void WordWriter::printToUpper(std::string input) {
     std::transform(input.begin(), input.end(), input.begin(), ::toupper);
-
-    std::cout << input << std::endl;
+    output_.write(input);
 }
 
 } // namespace justi
