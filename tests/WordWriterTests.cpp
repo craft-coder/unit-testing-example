@@ -1,16 +1,30 @@
-#include "ConsoleOutput.h"
-#include "WordGenerator.h"
+#include "OutputFake.h"
+#include "WordGeneratorFake.h"
 #include "WordWriter.h"
+#include <iostream>
 
 using namespace justi;
+using Words = WordGeneratorInterface::Words;
 
 int main() {
-    WordGenerator wordGenerator;
-    ConsoleOutput output;
+    //Setup
+    WordGeneratorFake wordGenerator;
+    wordGenerator.wordDataBase_ = Words{"abc"};
+    OutputFake output;
+
     WordWriter wordWriter{wordGenerator, output};
 
-    // We would like to test, if wordWriter properly transforms words to upper case
-    wordWriter.printRandomWordsToUpper(5);
+    // Action
+    wordWriter.printRandomWordsToUpper(1);
 
-    // Problem: We cannot test the result
+    // Assertion
+    auto expectedOutput = "ABC";
+    auto resultingOutput = output.writtenStuff[0];
+
+    if (expectedOutput == resultingOutput) {
+        std::cout << "Test successfull" << std::endl;
+    } else {
+        std::cout << "Test failed" << std::endl;
+    }
+
 }

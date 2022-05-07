@@ -9,18 +9,22 @@ component WordWriterLib {
 
     abstract class WordGeneratorInterface
     class WordGenerator 
+    class WordGeneratorFake
 
     abstract class OutputInterface
     class ConsoleOutput 
     class iostream
     class FileOutput
+    class OutputFake
 
     WordWriter o-- OutputInterface
     WordWriter o-- WordGeneratorInterface
 
     OutputInterface <|-- ConsoleOutput
     OutputInterface <|-- FileOutput
+    OutputInterface <|-- OutputFake
     WordGeneratorInterface <|-- WordGenerator
+    WordGeneratorInterface <|-- WordGeneratorFake
     ConsoleOutput <-- iostream
 }
 
