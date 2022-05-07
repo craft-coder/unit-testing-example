@@ -3,9 +3,13 @@
 #include <iostream>
 
 namespace justi {
-void WordWriter::printToUpper(std::string input) {
-    std::transform(input.begin(), input.end(), input.begin(), ::toupper);
-    output_.write(input);
+void WordWriter::printRandomWordsToUpper(std::size_t numWords) {
+    auto words = wordGenerator_.generate(numWords);
+
+    for (auto word : words) {
+        std::transform(word.begin(), word.end(), word.begin(), ::toupper);
+        output_.write(word);
+    }
 }
 
 } // namespace justi

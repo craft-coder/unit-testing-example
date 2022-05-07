@@ -3,10 +3,11 @@
 using namespace justi;
 
 int main() {
-    WordWriter wordWriter;
+    WordGenerator wordGenerator;
+    Output output;
+    WordWriter wordWriter{wordGenerator, output};
 
-    auto input = "justi";
-    wordWriter.printToUpper(input);
+    wordWriter.printRandomWordsToUpper(5);
 
     // Problem: We cannot test the result
 }

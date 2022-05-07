@@ -1,15 +1,23 @@
+#include "WordGenerator.h"
 #include "WordWriter.h"
 
 using namespace justi;
 
 int main(int argc, char** argv) {
 
-    WordWriter wordWriter{};
+    WordGenerator wordGenerator;
+    Output output;
+    WordWriter wordWriter{wordGenerator, output};
 
-    for (auto i = 1; i < argc; i++) {
-        auto input = std::string(argv[i]);
-        wordWriter.printToUpper(input);
+    auto numWords = 5;
+    if (argc > 1) {
+        try {
+            numWords = std::stoi(argv[1]);
+        } catch (...) {
+        }
     }
+
+    wordWriter.printRandomWordsToUpper(numWords);
 
     return 0;
 }
