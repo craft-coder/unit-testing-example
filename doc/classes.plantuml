@@ -1,0 +1,11 @@
+allow_mixing
+
+component Executable {
+    file WordWriter
+}
+
+component WordWriterLib {
+    class WordWriterLib
+}
+
+WordWriter <-- WordWriterLib
